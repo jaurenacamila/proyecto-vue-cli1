@@ -1,7 +1,10 @@
 <template>
 
   <section class="src-components-atributos">
-    <h1>src-components-atributos Component</h1>
+      <div class="jumbotron mt-3">
+      <h2>Componente Atributos</h2>
+      <hr />
+    </div>
   </section>
 
 </template>
@@ -25,13 +28,20 @@
     computed: {
 
     }
-}
-
-
+ }
 </script>
 
 <style scoped lang="css">
   .src-components-atributos {
 
   }
+
+  .jumbotron {
+  background-color: rgb(33, 90, 33);
+  color: white;
+}
+
+hr {
+  background-color: #eee;
+}
 </style>

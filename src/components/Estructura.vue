@@ -1,7 +1,10 @@
 <template>
 
   <section class="src-components-estructura">
-    <h1>src-components-estructura Component</h1>
+       <div class="jumbotron mt-3">
+      <h2>Componente Estructura</h2>
+      <hr />
+    </div>
   </section>
 
 </template>
@@ -34,4 +37,13 @@
   .src-components-estructura {
 
   }
+
+  .jumbotron {
+  background-color: pink;
+  color: brown;
+}
+
+hr {
+  background-color: #444;
+}
 </style>

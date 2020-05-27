@@ -1,9 +1,10 @@
 <template>
-
   <section class="src-components-binding">
-    <h1>src-components-binding Component</h1>
+    <div class="jumbotron mt-3">
+      <h2>Componente Binding</h2>
+      <hr />
+    </div>
   </section>
-
 </template>
 
 <script lang="js">
@@ -31,7 +32,15 @@
 </script>
 
 <style scoped lang="css">
-  .src-components-binding {
+.src-components-binding {
+}
 
-  }
+.jumbotron {
+  background-color: purple;
+  color: white;
+}
+
+hr {
+  background-color: white;
+}
 </style>

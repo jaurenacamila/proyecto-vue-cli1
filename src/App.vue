@@ -1,11 +1,29 @@
 <template>
-  <div>
-    <div id="app">
+  <div id="app" class="container">
+    <div class="jumbotron mt-3">
+
+      <h1>Componente Principal (App)</h1>
+      <hr>
+
       <Navbar />
+
       <Binding />
       <Estructura />
       <Atributos />
       <Contador />
+
+   <!--    <Navbar />
+      <div class="row">
+        <div class="col-6">
+          <Binding />
+        </div>
+         <div class="col-6">
+          <Estructura />
+        </div>
+      </div>
+      <Atributos />
+      <Contador /> -->
+
     </div>
   </div>
 </template>
@@ -32,4 +50,9 @@ export default {
 <style>
 #app {
 }
+
+h1{
+  color:blue
+}
+
 </style>
