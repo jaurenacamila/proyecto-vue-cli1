@@ -22,20 +22,75 @@
 
      props: ['valorInicial', 'estilo' , 'colorDeFondo' , 'titulo'],
 
-    mounted () {
 
+    //-------------------------------------------------
+    //-------------------------------------------------
+    //https://es.vuejs.org/v2/guide/instance.html
+    //-------------------------------------------------
+    //        CICLO DE VIDA DE LOS COMPONENTES DE VUE
+    //-------------------------------------------------
+
+    // Instanciación del componente (new)
+    beforeCreate () {
+      console.log('Contador 2 -> beforeCreate')
     },
+    created () {  
+      console.log('Contador 2 -> created')
+    },
+
+    // Montaje del componente en la vista
+    beforeMount () {
+      console.log('Contador 2 -> beforeMount')
+    },
+    mounted () {
+      console.log('Contador 2 -> mounted')
+
+      /*----------------------------------- */
+      /* activo proceso de timer */
+      /*-----------------------------------*/
+      this. refInterval = setInterval(() => {
+        this.timer++
+        console.log('Contador 2 -> TIMER', this.timer)
+      }, 1000);
+    },
+
+     // Actualización de la vista del componente
+    beforeUpdate () {
+      console.log('Contador 2 -> beforeUpdate')
+    },
+    updated () {
+      console.log('Contador 2 -> updated')
+    },
+
+      // Destrucción del componente
+    beforeDestroy () {
+      console.log('Contador 2 -> beforeDestroy')
+    },
+    destroyed () {
+      console.log('Contador 2 -> destroyed')
+
+      /*----------------------------*/
+      /* desactivo proceso de timer */
+      /*--------------------------- */
+      clearInterval(this.refInterval)
+    },
+
+    //-------------------------------------------------
+    //-------------------------------------------------
+
+
     data () {
       return {
-         contador: this.valorInicial
-
+         contador: this.valorInicial,
+         timer: 0,
+         refInterval: ''
       }
     },
     methods: {
 
       contar(){
       this.contador++
-      console.log(`El ini del contador es btn-${this.estilo}`)
+      //console.log(`El ini del contador es btn-${this.estilo}`)
     },
        getEstilos(){
         return 'btn-'+this.estilo
