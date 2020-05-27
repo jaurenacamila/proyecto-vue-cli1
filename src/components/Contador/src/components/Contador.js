@@ -1,11 +1,10 @@
-
 export default {
   name: 'src-components-contador',
   components: {},
-  props: [],
+  props: ['init', 'boton'],
   data () {
     return {
-
+      contador: this.init
     }
   },
   computed: {
@@ -15,6 +14,14 @@ export default {
 
   },
   methods: {
+
+    contar(){
+      this.contador++
+      console.log(`El ini del contador es btn-${this.boton}`)
+    },
+    getEstilos(){
+        return 'btn-'+this.boton
+    }
 
   }
 }

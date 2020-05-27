@@ -8,11 +8,21 @@
       <Navbar />
 
       <Binding />
-      <Estructura />
-      <Atributos />
-      <Contador />
 
-   <!--    <Navbar />
+      <Estructura />
+
+      <Atributos />
+
+      <Contador init="123" boton="danger" />
+      <Contador init="456" boton="warning" />
+      <Contador init="789" boton="success" />
+
+
+      <Contador2 valor-inicial="321" estilo="primary" color-de-fondo="darkred" titulo="CONTADOR 2" />
+
+
+
+      <!--   <Navbar />
       <div class="row">
         <div class="col-6">
           <Binding />
@@ -34,6 +44,8 @@ import Binding from "./components/Binding.vue";
 import Estructura from "./components/Estructura.vue";
 import Atributos from "./components/Atributos.vue";
 import Contador from "./components/Contador/index.vue";
+import Contador2 from "./components/Contador2.vue";
+
 
 export default {
   name: "App",
@@ -42,7 +54,8 @@ export default {
     Binding,
     Estructura,
     Atributos,
-    Contador
+    Contador,
+    Contador2
   }
 };
 </script>
