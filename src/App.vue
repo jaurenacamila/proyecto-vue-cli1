@@ -1,50 +1,35 @@
 <template>
-
- <div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
+  <div>
     <div id="app">
-      <HelloWorld msg="Bienvenidos a Vue.js CLI"/>
+      <Navbar />
+      <Binding />
+      <Estructura />
+      <Atributos />
+      <Contador />
     </div>
-
   </div>
 </template>
 
 <script>
-
-import HelloWorld from './components/HelloWorld.vue'
+import Navbar from "./components/Navbar.vue";
+import Binding from "./components/Binding.vue";
+import Estructura from "./components/Estructura.vue";
+import Atributos from "./components/Atributos.vue";
+import Contador from "./components/Contador/index.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
+    Navbar,
+    Binding,
+    Estructura,
+    Atributos,
+    Contador
   }
-}
+};
 </script>
 
 <style>
 #app {
-
 }
 </style>
