@@ -1,7 +1,9 @@
 <template>
   <section class="src-components-navbar">
     <nav class="navbar navbar-expand-lg navbar-dark bg-info">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <router-link to ="/">
+      <a class="navbar-brand" href="#">Inicio</a>
+       </router-link>
       <button
         class="navbar-toggler"
         type="button"
@@ -15,21 +17,43 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">
-              Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
+
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
+            <router-link to ="/Binding" tag="li">
+            <a class="nav-link" href="#">Binding</a>
+            </router-link>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
+
+           <li class="nav-item">
+            <router-link to ="/Estructura" tag="li">
+            <a class="nav-link" href="#">Estructura</a>
+            </router-link>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+
+           <li class="nav-item">
+            <router-link to ="/Atributos" tag="li">
+            <a class="nav-link" href="#">Atributos</a>
+            </router-link>
           </li>
+
+           <li class="nav-item">
+            <router-link to ="/Contador2/321/primary/darkred/Contador 2" tag="li">
+            <a class="nav-link" href="#">Contador2</a>
+            </router-link>
+          </li>
+
+           <li class="nav-item">
+            <router-link to ="/Formulario" tag="li">
+            <a class="nav-link" href="#">Formulario</a>
+            </router-link>
+          </li>
+
+            <li class="nav-item">
+            <router-link to ="/Http" tag="li">
+            <a class="nav-link" href="#">Http</a>
+            </router-link>
+          </li>
+
         </ul>
       </div>
     </nav>

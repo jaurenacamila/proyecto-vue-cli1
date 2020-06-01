@@ -1,5 +1,69 @@
-
 <section class="src-components-formulario">
-  <h1>src-components-formulario Component</h1>
-</section>
 
+  <div class="jumbotron mt-3">
+    <h2>Componente Formulario</h2>
+    <hr />
+
+    <vue-form :state="formState" @submit.prevent="enviar()">
+
+      <validate tag="div">
+
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" class="form-control" autocomplete="off" name="nombre"
+          v-model.number="formData.nombre" required no-espacios> 
+
+          <field-messages name="nombre" show="$dirty">
+                   <div slot="required" class="alert alert-danger">Campo nombre requerido</div>
+                   <div slot="no-espacios" class="alert alert-danger">No se permiten espacios</div>
+          </field-messages>
+
+      </validate>
+      <br>
+
+      <validate tag="div"></validate>
+        <label for="apellido">Apellido</label>
+        <input type="text" id="apellido" class="form-control" autocomplete="off" name="apellido"
+          v-model.trim="formData.apellido" required>
+      </validate>
+      <br>
+
+      <validate tag="div">
+        <label for="edad">Edad</label>
+        <input type="number" 
+               id="edad" 
+               class="form-control" 
+               autocomplete="off" 
+               name="edad" 
+               v-model.number="formData.edad" 
+               required 
+               :min="edadMin" 
+               :max="edadMax"
+        >
+      
+      <field-messages name="edad" show="$dirty">
+ <!--        <div class="alert alert-success my-1">Campo correcto</div> -->
+        <div slot="required" class="alert alert-danger">Campo edad requerido</div>
+        <div slot="min" class="alert alert-danger">La edad minima es {{edadMin}}</div>
+        <div slot="max" class="alert alert-danger">La edad maxima es {{edadMax}}</div>
+
+        
+      </field-messages>
+      
+      </validate>
+      <br>
+
+      <validate tag="div">
+        <label for="email">Email</label>
+        <input type="text" id="email" class="form-control" autocomplete="off" name="email" v-model.trim="formData.email" required>
+      </validate>
+      <br>
+
+      <button class="btn btn-success my-4" :disabled="formState.$invalid" type="submit">Enviar</button>
+
+    </vue-form>
+
+   <!--  <pre>{{formState}}</pre> -->
+
+  </div>
+
+</section>
