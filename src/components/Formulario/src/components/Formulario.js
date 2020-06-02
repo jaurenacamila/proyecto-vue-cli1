@@ -1,3 +1,5 @@
+import axios from 'axios'
+import { urlPosts } from '../../../../urls'
 
 export default {
   name: 'src-components-formulario',
@@ -9,7 +11,9 @@ export default {
       formData: this.getInitialData(),
       edadMin:18,
       edadMax:120,
-      enviando: false
+      enviando: false,
+      nombreChrMin: 5,
+      nombreChrMax: 15
     }
   },
   computed: {
@@ -28,9 +32,29 @@ export default {
       }
     },
     enviar(){
+      this.enviando = true
       console.log(this.formData)
-      this.formData = this.getInitialData()
-      this.formState._reset()
+
+      /* ------------------------- */
+      /* ENVIO DE DATOS CON AXIOS */
+      /* ----------------------- */
+      axios.post(urlPosts, this.formData,{
+        'contente-type' : 'application/json'
+      })
+      .then( res =>{
+        console.log(res.data)
+        this.formData = this.getInitialData()
+        this.formState._reset() 
+        this.enviando = false
+      })
+      .catch(error =>{
+        console.log('ERROR POST',error)
+        this.enviando = false
+      })
+
+      setTimeout(() => {
+        this.enviando = false
+      },10000)
     }
 
   }

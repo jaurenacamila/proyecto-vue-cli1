@@ -38,7 +38,14 @@
             <!--------------------------------------------->
             <!--------------------------------------------->
         <h4><u>v-for</u></h4>
-            <br>
+        <br>
+
+            <ul>
+                <li v-for="(dato, index) in formData" :key="index">
+                    {{dato}}
+                </li>
+            </ul>
+
             <ul>
                 <li v-for ="(usuario, index) in usuarios" :key="index">
                     {{ index + 1 }} - {{ usuario }}
@@ -135,15 +142,30 @@
 
 <script lang="js">
 
-  export default  {
+    import axios from 'axios'
+    import { urlPosts } from '../urls'
+
+    export default  {
     name: 'src-components-estructura',
     props: [],
-    mounted () {
 
+    mounted () {
+        /* -------------------------------------------- */
+        /* OBTENGO LOS DATOS SUBIDOS POR EL FORMULARIO */
+        /* -------------------------------------------- */
+        axios.get(urlPosts)
+        .then(res => {
+            console.log(res.data)
+            this.formData = res.data
+        })
+        .catch(error =>{
+            console.log ('ERROR GET', error)
+        })
     },
+
     data () {
       return {
-
+      formData:[],
       mostrar: true,
       mostrar2: true,
       nombre: '',
