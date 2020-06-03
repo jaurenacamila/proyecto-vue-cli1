@@ -1,4 +1,4 @@
-import axios from 'axios'
+
 import { urlPosts } from '../../../../urls'
 
 export default {
@@ -35,10 +35,10 @@ export default {
       this.enviando = true
       console.log(this.formData)
 
-      /* ------------------------- */
+      /* ------------------------- */ 
       /* ENVIO DE DATOS CON AXIOS */
       /* ----------------------- */
-      axios.post(urlPosts, this.formData,{
+      this.axios.post(urlPosts, this.formData,{
         'contente-type' : 'application/json'
       })
       .then( res =>{

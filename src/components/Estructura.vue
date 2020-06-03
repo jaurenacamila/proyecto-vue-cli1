@@ -142,7 +142,6 @@
 
 <script lang="js">
 
-    import axios from 'axios'
     import { urlPosts } from '../urls'
 
     export default  {
@@ -153,7 +152,7 @@
         /* -------------------------------------------- */
         /* OBTENGO LOS DATOS SUBIDOS POR EL FORMULARIO */
         /* -------------------------------------------- */
-        axios.get(urlPosts)
+        this.axios.get(urlPosts)
         .then(res => {
             console.log(res.data)
             this.formData = res.data
