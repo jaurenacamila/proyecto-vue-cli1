@@ -7,8 +7,8 @@
             <h1>Componente Principal (App)</h1>
             <hr>
 
+            <Padre />
             <Navbar />
-
             <router-view></router-view>
             
         </div>
@@ -20,11 +20,13 @@
 <script>
 
 import Navbar from "./components/Navbar.vue";
+import Padre from "./components/Padre.vue";
 
 export default {
   name: "App",
   components: {
     Navbar,
+    Padre
   },
   data() {
     return{

@@ -1,9 +1,9 @@
 <template>
 
   <section class="src-components-atributos">
-      <div class="jumbotron mt-3">
+    <div class="jumbotron mt-3">
       <h2>Componente Atributos</h2>
-      <hr />
+      <hr>
       <h4><u>:style</u></h4>
             <br>
             <button class="btn btn-success my-3" @click="estado1=!estado1">Cambiar</button>
