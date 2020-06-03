@@ -1,7 +1,7 @@
 <section class="src-components-formulario">
 
   <div class="jumbotron mt-3">
-    <h2>Componente Formulario</h2>
+    <h2>Componente {{ 'Formulario' | reverse | aMayuscula | wrap('','-fin') }}</h2>
     <hr>
 
     <vue-form :state="formState" @submit.prevent="enviar()">

@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+
 import 'jquery'
 import 'popper.js'
 import 'bootstrap'
@@ -8,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { router } from './routes'
 import './httpClient'
 import './form'
+import './filters'
 
 
 Vue.config.productionTip = false
